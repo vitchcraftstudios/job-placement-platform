@@ -197,6 +197,10 @@ export default function Home() {
             </button>
           </div>
         </section>
+
+        <footer className="mt-8 pb-2 text-center text-sm text-slate-500">
+          JobPlace Demo | Built for hiring velocity, candidate clarity, and production-ready scale.
+        </footer>
       </main>
     </div>
   );
