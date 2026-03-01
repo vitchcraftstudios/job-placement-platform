@@ -1,4 +1,5 @@
 import { jobOpenings, pipeline } from "./data";
+import PreloaderGate from "./components/preloader-gate";
 
 const processSteps = [
   {
@@ -19,8 +20,9 @@ const categories = ["Engineering", "Data", "Product", "Design", "Marketing", "Op
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#f7f8fc] text-slate-900">
-      <main className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-8 sm:py-12">
+    <PreloaderGate>
+      <div className="min-h-screen bg-[#f7f8fc] text-slate-900">
+        <main className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-8 sm:py-12">
         <header className="mb-5 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-white px-3 py-3 shadow-sm sm:mb-6 sm:px-6">
           <div className="flex items-center gap-3">
             <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-slate-900 text-sm font-bold text-white">
@@ -201,7 +203,8 @@ export default function Home() {
         <footer className="mt-8 pb-2 text-center text-sm text-slate-500">
           JobPlace Demo | Built for hiring velocity, candidate clarity, and production-ready scale.
         </footer>
-      </main>
-    </div>
+        </main>
+      </div>
+    </PreloaderGate>
   );
 }
