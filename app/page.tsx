@@ -1,5 +1,6 @@
 import { jobOpenings, pipeline } from "./data";
 import PreloaderGate from "./components/preloader-gate";
+import { getHomepageContent } from "@/lib/cms";
 
 const processSteps = [
   {
@@ -18,7 +19,9 @@ const processSteps = [
 
 const categories = ["Engineering", "Data", "Product", "Design", "Marketing", "Operations"];
 
-export default function Home() {
+export default async function Home() {
+  const homepageContent = await getHomepageContent();
+
   return (
     <PreloaderGate>
       <div className="min-h-screen bg-[#f7f8fc] text-slate-900">
@@ -69,11 +72,10 @@ export default function Home() {
               Job Placement Platform
             </p>
             <h1 className="mt-4 max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl">
-              Find your next role with a modern placement experience
+              {homepageContent.heroTitle}
             </h1>
             <p className="mt-4 max-w-2xl text-lg text-slate-600 sm:text-base">
-              A candidate-first platform to discover verified jobs, track applications,
-              and move from profile to offer with transparent updates.
+              {homepageContent.heroSubtitle}
             </p>
 
             <div className="mt-7 flex flex-col gap-3 rounded-2xl border border-slate-200 bg-white/80 p-3 backdrop-blur sm:mt-8 sm:flex-row">

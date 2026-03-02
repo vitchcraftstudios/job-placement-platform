@@ -30,6 +30,25 @@ bun dev
 
 Open `http://localhost:3000` to view the app.
 
+### Configure Neon + Admin CMS
+1. Ensure `.env.local` has:
+   - `DATABASE_URL`
+   - `ADMIN_EMAIL`
+   - `ADMIN_PASSWORD`
+   - `ADMIN_SESSION_TOKEN`
+2. Install dependencies:
+   - `npm install`
+3. Generate Prisma client:
+   - `npm run db:generate`
+4. Push schema to Neon:
+   - `npm run db:push`
+5. Start app:
+   - `npm run dev`
+
+Admin endpoints:
+- Login: `/admin/login`
+- CMS content editor: `/admin/content`
+
 ### Deployment (Vercel)
 This repo is connected to GitHub:
 - `origin`: `https://github.com/vitchcraftstudios/job-placement-platform.git`
@@ -52,6 +71,9 @@ To deploy:
 - `npm run dev` - local development
 - `npm run build` - production build test
 - `npm run lint` - lint checks
+- `npm run db:generate` - generate Prisma client
+- `npm run db:push` - sync Prisma schema to Neon
+- `npm run db:studio` - open Prisma Studio
 
 ### Stack
 - Next.js (App Router)
