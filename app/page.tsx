@@ -46,6 +46,9 @@ export default function Home() {
             <a href="#" className="transition hover:text-slate-900">
               Resources
             </a>
+            <a href="/admin" className="transition hover:text-slate-900">
+              Admin CMS
+            </a>
           </nav>
           <div className="ml-auto flex items-center gap-2">
             <button className="rounded-lg px-2 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 sm:px-3">

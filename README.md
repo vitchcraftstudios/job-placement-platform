@@ -30,14 +30,23 @@ bun dev
 
 Open `http://localhost:3000` to view the app.
 
-### GitHub + Vercel
+### Deployment (Vercel)
 This repo is connected to GitHub:
 - `origin`: `https://github.com/vitchcraftstudios/job-placement-platform.git`
 
-To deploy on Vercel later:
-1. Push your commits to `main`.
-2. Import this GitHub repository in Vercel.
-3. Keep framework preset as Next.js and deploy.
+Deployment is configured with `vercel.json`:
+- Framework: Next.js
+- Install command: `npm ci`
+- Build command: `npm run build`
+- Dev command: `npm run dev`
+
+To deploy:
+1. Push your branch/commits to GitHub.
+2. Import/select this repository in Vercel.
+3. Keep root directory as project root and deploy.
+4. After deploy, verify:
+   - Public app: `/`
+   - Admin CMS: `/admin`
 
 ### Useful Commands
 - `npm run dev` - local development
